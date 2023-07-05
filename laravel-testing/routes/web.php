@@ -19,5 +19,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/helloworld', function() {
-    return "Hello World";
+    return response('<h2>Hello World</h2>');
 });
+
+Route::get('/posts/{id}', function($id){
+    return response('Post ' . $id);
+})->where('id', '[0-9]+');
