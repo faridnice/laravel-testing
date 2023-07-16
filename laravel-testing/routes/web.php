@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\StudentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +27,5 @@ Route::get('/helloworld', function() {
 Route::get('/posts/{id}', function($id){
     return response('Post ' . $id);
 })->where('id', '[0-9]+');
+
+Route::resource("/student", StudentController::class);
